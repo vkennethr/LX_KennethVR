@@ -1,0 +1,18 @@
+    1  mkdir LX_kenneth
+    2  cd LX_kenneth/
+    3  mkdir LAMP
+    4  git init
+    5  sudo apt-get install init
+    6  sudo apt-get install git
+    7  git init
+    8  git config --global user.email "kenneth.varp@gmail.com"
+    9  git config --global user.name "kenneth"
+   10  git add LAMP
+   11  git add .
+   12  git pull
+   13  git commit -m "LAMP"
+   14  git remote add origin https://github.com/vkennethr/LX_KennethVR.git
+   15  git push -u origin master
+   16  git pull
+   17  git push -u origin master
+   18  history > history
