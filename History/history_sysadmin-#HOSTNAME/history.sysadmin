@@ -1,0 +1,284 @@
+    1  mkdir LX_kenneth
+    2  cd LX_kenneth/
+    3  mkdir LAMP
+    4  git init
+    5  sudo apt-get install init
+    6  sudo apt-get install git
+    7  git init
+    8  git config --global user.email "kenneth.varp@gmail.com"
+    9  git config --global user.name "kenneth"
+   10  git add LAMP
+   11  git add .
+   12  git pull
+   13  git commit -m "LAMP"
+   14  git remote add origin https://github.com/vkennethr/LX_KennethVR.git
+   15  git push -u origin master
+   16  git pull
+   17  git push -u origin master
+   18  history > history
+   19  git status
+   20  git pull
+   21  git status
+   22  git push -u origin master
+   23  sudo apt-get install gitk
+   24  gitk
+   25  git status
+   26  git add history
+   27  git status
+   28  git commit -m "LAMP"
+   29  git status
+   30  git push -u origin master
+   31  git add LAMP
+   32  git commit -m "LAMP"
+   33  git push -u origin master
+   34  git commit -m "LAMP2"
+   35  git push -u origin master
+   36  git push -u hola master
+   37  cd
+   38  sudo apt-get install apache
+   39  sudo apt-get install apache2
+   40  cd LX_kenneth/
+   41  LAMP/
+   42  mkdir screeshots
+   43  mkdir apache2
+   44  mkdir drupal
+   45  mkdir history
+   46  cd ..
+   47  cd
+   48  cd LX_kenneth/
+   49  mkdir history
+   50  ls -la
+   51  mkdir History
+   52  cd History/
+   53  cd
+   54  cd LX_kenneth/L
+   55  cd LX_kenneth/LAMP/
+   56  mkdir screeshots
+   57  mkdir apache2
+   58  mkdir drupal
+   59  cd
+   60  git add LAMP/
+   61  git add LAMP
+   62  cd LX_kenneth/
+   63  git add LAMP/
+   64  git add LAMP
+   65  git commit -m "LAMP"
+   66  git push origin master
+   67  cd
+   68  cd /etc/apache2/sites-available/
+   69  sudo cp 000-default.conf mitata.com.conf
+   70  sudo getid mitata.com.conf
+   71  sudo apt-get install gedit
+   72  sudo getid mitata.com.conf
+   73  sudo nano mitata.com.conf
+   74  sudo mkdir /var/www/test1
+   75  sudo chown -R $sysadmin:$sysadmin /var/www/test1
+   76  sudo chmod -R 755 /var/www
+   77  nano /var/www/test1/index.html
+   78  sudo chown -R $sysadmin:$sysadmin /var/www/test1/index.html
+   79  sudo chown -R $sysadmin:$sysadmin /var/www/test1
+   80  sudo chmod -R 755 /var/www
+   81  nano /var/www/test1/index.html
+   82  sudo chown -R $USER:$USER /var/www/test1
+   83  nano /var/www/test1/index.html
+   84  sudo nano mitata.com.conf
+   85  sudo a2ensite cms.local.conf
+   86  sudo a2ensite mitata.conf
+   87  sudo a2ensite mitata.com.conf
+   88  Apache
+   89  ¿Quieres tener un hosting virtual (virtual host) pero no tienes idea de cómo hacerlo? En esta guía te lo explicamos paso a paso:
+   90  Requisitos
+   91  1. Tener un servidor web (acá te explicamos cómo instalar un servidor en Ubuntu paso a paso)
+   92  Introducción
+   93  Si has estado siguiendo paso a paso nuestros tutoriales, te habrás dado cuenta que al momento de acceder al proyecto del CMS, escribimos una URL como la siguiente:
+   94  http://cms.local
+   95  1
+   96  http://cms.local
+   97  Pero lo más seguro es que tú escribas esto:
+   98  http://localhost/cms/public
+   99  1
+  100  http://localhost/cms/public
+  101  ¿Qué es un hosting virtual (o virtual host)?
+  102  Un hosting virtual consiste en utilizar tu propio servidor web para atender varios dominios locales (sólo disponibles en tu computador)
+  103  Además de habilitar un dominio virtual también habilitaremos las URLs amigables (Friendly URLs) dentro del mismo archivo de configuración, ¿Qué quiere decir esto? Laravel, Symfony y los otros frameworks vigentes de PHP necesitan que habilitemos “URL amigables” para poder trabajar sin problemas. Empecemos de una vez:
+  104  1. Lo primero que tenemos que hacer es dirigirnos a la carpeta /etc/apache2/sites-available/ dentro de tu computador, puedes hacerlo con el comando:
+  105  cd /etc/apache2/sites-available/
+  106  1
+  107  cd /etc/apache2/sites-available/
+  108  Dentro de esta dirección copiamos el archivo 000-default.conf y lo guardamos con el nombre de cms.local.conf, con el comando:
+  109  sudo cp 000-default.conf cms.local.conf
+  110  1
+  111  sudo cp 000-default.conf cms.local.conf
+  112  (Es importante que agregues la extensión .conf, el nombre puede ser cualquier otro pero para tener un poco más organizados nuestros archivos lo nombraremos igual al dominio que vamos a crear)
+  113  Ahora tenemos que editarlo, y lo hacemos con el siguiente comando:
+  114  sudo gedit cms.local.conf
+  115  1
+  116  sudo gedit cms.local.conf
+  117  (Reemplaza gedit si usas otro editor de texto, como “nano”, etc.)
+  118  Y dentro de ese archivo debemos de agregar las siguientes lineas:
+  119  Virtual Host
+  120  Muy bien, ahora les esxplicaré algunas cosas:
+  121  ServerName: es el nombre de nuestro dominio virtual, mediante él podremos acceder al proyecto en el navegador.
+  122  DocumentRoot: es la ruta a la carpeta del proyecto en el servidor, en este caso, tu propio computador, como estamos usando Laravel necesitamos que ese dominio apunte a la carpeta “public” de tu proyecto.
+  123  <Directory>: lo que está dentro de estos bloques permite activar las URLs amigables.
+  124  Una vez hecho esto, guarda todos los cambios y cierra el archivo.
+  125  2. Ahora tenemos que indicarle a Apache que tenemos un nuevo documento. Lo hacemos con el siguiente comando:
+  126  sudo a2ensite cms.local.conf
+  127  1
+  128  sudo a2ensite cms.local.conf
+  129  sudo a2ensite mitata.com.conf
+  130  sudo nano /etc/host
+  131  sudo nano /etc/hosts
+  132  sudo a2enmod rewrite
+  133  sudo service apache2 restart 
+  134  sudo a2enmod mitata.com
+  135  sudo nano mitata.com.conf
+  136  sudo nano /var/www/test1/index.html 
+  137  sudo a2enmod mitata.com
+  138  sudo nano mitata.com.conf
+  139  sudo nano /etc/hosts
+  140  sudo a2enmod mitata.com
+  141  sudo service apache2 restart 
+  142  cd /var/www/
+  143  tree
+  144  ls -la
+  145  cd test1/
+  146  ls -la
+  147  sudo nano mitata.com.conf
+  148  cd 
+  149  cd /etc/apache2/sites-available/
+  150  sudo nano mitata.com.conf
+  151  sudo a2enmod mitata.com
+  152  sudo a2enmod mitata.com.conf
+  153  sudo service apache2 restart 
+  154  sudo nano /var/www/test1/index.html 
+  155  cd
+  156  cd LX_kenneth/
+  157  git add LAMP
+  158  git status
+  159  git commit -m "LAMP"
+  160  git push origin master
+  161  sudo cp /etc/apache2/sites-available/000-default.conf LAMP/apache2/
+  162  sudo cp /etc/apache2/sites-available/mitata.com.conf LAMP/apache2/
+  163  git add LAMP/
+  164  git commit -m "LAMP"
+  165  git push origin master
+  166  cd
+  167  wget http://ftp.drupal.org/files/projects/drupal-7.25.tar.gz
+  168  tar -zxvf drupal-7.25.tar.gz
+  169  sudo mv drupal-7.25/* /var/www/drupal
+  170  mkdir /var/www/drupal
+  171  sudo mkdir /var/www/drupal
+  172  sudo mv drupal-7.25/* /var/www/drupal
+  173  history 
+  174  cd /var/www/drupal/
+  175  cp sites/default/default.settings.php
+  176  ls -la
+  177  sudo apt-get install php5-gd
+  178  install php5 
+  179  sudo apt-get install php5 
+  180  sudo apt-get install mysql-server mysql-client apache2 php5 php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
+  181  cp sites/default/default.settings.php
+  182  ls -la
+  183  chmod a+w sites/default/settings.php
+  184  cd sites/default/
+  185  ls -la
+  186  cp default.settings.php settings.php
+  187  cd ..
+  188  chmod a+w sites/default/settings.php
+  189  chmod a+w sites/default
+  190  mysql -u root -p
+  191  sudo apt-get install php5-gd
+  192  sudo nano sites/default/settings.php
+  193  ls -la
+  194  sudo chown -R www-data:www-data /var/www/drupal/
+  195  sudo apache2 start
+  196  chown -R www-data.www-data /var/www/html/drupal
+  197  chmod -R 755 /var/www/html/drupal
+  198  cd ..
+  199  chmod -R 755 /drupal
+  200  chmod -R 755 drupal/
+  201  sudo chmod -R 755 drupal/
+  202  sudo apt-get update
+  203  sudo service apache2 restart
+  204  sudo systemctl stop apache2.service
+  205  sudo stop apache2.service
+  206  sudo start apache2
+  207  apache2 stop
+  208  sudo service apache2 stop
+  209* 
+  210  sudo service apache2 start
+  211  cd
+  212  cd LX_kenneth/
+  213  ls -la
+  214  cd History/
+  215  mkdir history_sysadmin-#HOSTNAME
+  216  mkdir mysqlhistory
+  217  sudo service mysql restart
+  218  cd
+  219  .mysql_history
+  220  sudo .mysql_history
+  221  sudo cd .mysql_history
+  222  cd /var/log/mysql/mysql.log
+  223  mysql -u root -p
+  224  history 
+  225  sudo su -
+  226  cd LX
+  227  cd LX_kenneth/hist
+  228  cd LX_kenneth/History/
+  229  cd mysqlhistory/
+  230  mysql_history > ~/.mysql_history
+  231  mysql_history < ~/.mysql_history
+  232  history 
+  233  /var/log/mysql/error.log
+  234  sudo cd /var/log/mysql/error.log
+  235  sudo su -
+  236  cd
+  237  cd /var/log/mysql/error.log
+  238  cd /var/log/mysql
+  239  ls -la
+  240  cat error.log 
+  241  cat ~/.mysql_history
+  242  cd
+  243  cat ~/.mysql_history
+  244  mysql -u root -p
+  245  shoe databases;
+  246  show databases;
+  247  sudo apt-get install nmh
+  248  show databases;
+  249  cat ~/.mysql_history
+  250  cd LX_kenneth/History/mysqlhistory/
+  251* 
+  252  mysql_history drupaldb > cat ~/.mysql_history
+  253  cat ~/.mysql_history < mysql_history_drpauldb
+  254* 
+  255  cat ~/.mysql_history > mysql_drupaldb
+  256  ls -la
+  257  rm cat
+  258  cd ..
+  259  ls -la
+  260  cd history_sysadmin-#HOSTNAME/
+  261  cd ..
+  262  cd mysqlhistory/
+  263  ls -la
+  264  cat mysql_drupaldb 
+  265  cd ..
+  266  cd history_sysadmin-#HOSTNAME/
+  267  history < history#HOSTNAME
+  268  ls -la
+  269  cd
+  270  cd LX_kenneth/
+  271  git add LAMP
+  272  git add History
+  273  git commit -m "LAMP"
+  274  git push origin master
+  275  cd History/
+  276  ls -la
+  277  cd history_sysadmin-#HOSTNAME/
+  278  ls -la
+  279  history < history-#HOSTNAME
+  280  history > history-#HOSTNAME
+  281  LS-LA
+  282  ls -la
+  283  rm history-#HOSTNAME 
+  284  history > history.sysadmin
